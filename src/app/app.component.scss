@@ -1,0 +1,40 @@
+//paleta de colores
+$color1: #FF0056;
+$color2:#FF7774; 
+$color3: #FFEC19;
+$white: #EEE;
+$black: #111;
+
+//layout 
+$max-width: 1200px;
+
+//ancho nav
+$width-menu: 12em;
+//breakpoint
+$small: 480px;
+$medium: 768px;
+$large: 1025px;
+$x-large: 1400px;
+
+.btn{
+    display: inline-block;
+    border: 1px solid;
+    border-color: $color3;
+    color: $color3;
+    padding: .5em;
+    text-decoration: none;
+   
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+//mixin
+@mixin desde($size){
+    @media screen and (min-width: $size) {
+        @content;
+    }
+
+}
+

@@ -1,0 +1,75 @@
+@import "../../app.component.scss";
+.banner {
+    position: relative;
+    &__img{
+        width: 100%;
+        display: block;
+
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient($color1, $color3);
+        opacity: 0.4;
+    }
+
+    &__copy {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        z-index: 100;
+        &__title{
+            font-size: 1.4em;
+            color:$white;
+            @include desde($large){
+                font-size: 3em;
+            }
+        }
+        &__text{
+            color:$white;
+            @include desde($large){
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    &__menu{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        text-decoration: none;
+        opacity: .5;
+        margin:0;
+        z-index: 150;
+        &:before{
+            font-size: 1.5em;
+            color:$color3;
+            border: 1px solid $color3;
+            border-radius: .25em;
+            padding: .10em;
+        
+        }
+
+        @include desde($small){
+            &:before{
+                font-size: 1em;          
+            }
+        }
+
+        @include desde($medium){
+            &:before{
+                font-size: 2.5em;          
+            }
+        }
+    }
+
+
+
+}

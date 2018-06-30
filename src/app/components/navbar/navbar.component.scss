@@ -1,0 +1,36 @@
+@import "../../app.component.scss";
+
+.nav{
+    
+    position: fixed;
+    top: 0;
+    right: -$width-menu;
+    z-index: 200;
+    width: $width-menu;
+    background: $color3;
+    height: 100vh;
+    transition: all 2s;
+    opacity: .5;
+    &__menu{
+        list-style-type: none;
+        padding: 1em;
+    
+        &__item{
+            text-align: left;
+            font-size: 1.3em;
+            margin-bottom: 1em;
+
+            &__link{
+                color: $color1;
+                text-decoration: none;
+                border-bottom: 1px solid $color1;
+            }
+        }
+    }
+
+    &.mostrar{
+        right: 0;
+    }
+
+
+}

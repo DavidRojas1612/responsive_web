@@ -1,0 +1,114 @@
+@import "../../app.component.scss";
+
+.staff{
+    text-align: center;
+    
+    &__container{
+
+        @include desde($small){
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+        }
+
+        @include desde($large){
+           flex-wrap: nowrap;
+           justify-content: space-between;
+        }
+    }
+
+    &__title{
+        display: block;
+    }    
+
+    &__member {
+        margin-bottom: 1em;
+        background: $color2;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 10em;
+        position: relative;
+        padding: 1em 0;
+        transition: transform 1s;
+        border-radius: .25em;
+        @include desde($small){
+            display:block;
+            width: calc(50% - 0.5em);
+            magin: 0.5em 1em; 
+            height: auto;
+
+            &:nth-child(odd):hover{
+                transform: scale(1.1);
+                box-shadow: 10px 10px 23px -4px rgba(0,0,0,0.75);
+                z-index: 11;
+             }
+        }
+
+        @include desde($large){
+            width: calc(25% - 0.5em);
+            &:nth-child(odd):hover{
+                transform: scale(1.1);
+                box-shadow: 0px 0px 26px 3px rgba(0,0,0,0.75);
+                z-index: 15;
+             }
+        }
+
+
+       
+
+        &:after{
+            position:absolute;
+            content:"";
+            top: 2px;
+            left: 2px;
+            display:block;
+            width:100%;
+            height:100%;
+            background: linear-gradient(to right, $color1, $color2);
+            filter: blur(10px);
+            z-index: -10;
+        }
+
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: -4px -4px 30px -4px rgba(39, 39, 39,1);
+         }
+
+       
+        &__profile{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 25%;
+            border: 1.5px solid $color1;
+            border-radius: 50%;
+        }
+        &__name{
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            color:$white;
+            margin: 0;
+        }
+
+        &__link{
+            
+            background: $color3;
+            color:$color1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        &__link, &__name, &__profile{
+            @include desde($small){
+                position: relative;
+                left: auto;
+                top: auto;
+                bottom: auto; 
+            }
+        }
+
+    }
+}
